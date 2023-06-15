@@ -9,9 +9,9 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: FranzDiebold/github-env-vars-action@v2
-      - name: Variables
-        run: |
-          echo "$CI_HEAD_REF"
+      # - name: Variables
+      #   run: |
+      #     echo "$CI_HEAD_REF"
       - name: Trigger-unit-test
         uses: mledot/jenkins-trigger@main      
         with:
