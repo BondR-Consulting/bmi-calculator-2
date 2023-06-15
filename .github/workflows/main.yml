@@ -12,14 +12,12 @@ jobs:
       - name: Variables
         run: |
           echo "$CI_HEAD_REF"
-      - name: Print
-        run: echo ${{ env.CI_ACTION_REF_NAME }}
       - name: Trigger-unit-test
         uses: mledot/jenkins-trigger@main      
         with:
-          url:  ${{ secrets.JENKINS_URL }}
-          user_name: ${{ secrets.JENKINS_USER }} # user name for accessing jenkins
-          api_token: ${{ secrets.JENKINS_PASS }} # personal Access token for accessing Jenkins
+          url:  "${{ secrets.JENKINS_URL }}"
+          user_name: "${{ secrets.JENKINS_USER }}" # user name for accessing jenkins
+          api_token: "${{ secrets.JENKINS_PASS }}" # personal Access token for accessing Jenkins
           job_name: "SamplePR" # The name of the jenkins job to run
           # parameter: '{"branch": "${{ env.CI_ACTION_REF_NAME }}", "repo":"${{ env.CI_REPOSITORY_NAME }}", "base":"${{ env.CI_BASE_REF }}"}'
           timeout: "5000"
