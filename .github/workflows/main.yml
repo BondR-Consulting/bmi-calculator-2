@@ -21,5 +21,5 @@ jobs:
           user_name: "morgan" # user name for accessing jenkins
           api_token: "11e9875440abdb6b0d715549a977acc47e" # personal Access token for accessing Jenkins
           job_name: "SamplePR" # The name of the jenkins job to run
-          parameter: { "branch": "${{ env.CI_ACTION_REF_NAME }}" }
+          parameter: '{ "branch": "${{ env.CI_ACTION_REF_NAME }}" }'
           timeout: "5000"
