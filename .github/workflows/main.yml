@@ -1,16 +1,13 @@
 name: Jenkins Pipeline
 
 on:
-  pull_request:
-    branches:
-      - main
-  push:
+  [push, pull_request]
 
 concurrency:
   group: unit-test
 
 jobs:
-  Jenkins-Testing:
+  Jenkins-Editor-Testing:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -21,7 +18,7 @@ jobs:
       - name: Print
         run: echo ${{ env.CI_ACTION_REF_NAME }}
       - name: Trigger-unit-test
-        uses: SimonMaghiar/jenkins-trigger@main      
+        uses: mledot/jenkins-trigger@main        
         with:
           url:  ${{ secrets.JENKINS_URL }}
           user_name: ${{ secrets.JENKINS_USER }} # user name for accessing jenkins
