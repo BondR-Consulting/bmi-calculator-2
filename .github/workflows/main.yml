@@ -24,7 +24,7 @@ jobs:
       - name: Print
         run: echo ${{ env.CI_ACTION_REF_NAME }}
       - name: Trigger-unit-test
-        uses: SimonMaghiar/jenkins-trigger@main      
+        uses: mledot/jenkins-trigger@main      
         with:
           url:  ${{ secrets.JENKINS_URL }}
           user_name: ${{ secrets.JENKINS_USER }} # user name for accessing jenkins
